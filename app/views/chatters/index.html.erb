@@ -1,2 +1,19 @@
-<h1>Chatters#index</h1>
-<p>Find me in app/views/chatters/index.html.erb</p>
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ChatterApp</title>
+</head>
+<body>
+    <h1>ChatterApp</h1>
+    <%= render 'form' %>
+    
+    <hr>
+
+    <%= @chatters.each do |chatter| %>
+        <div><%= chatter.content %></div>
+    <% end %>
+</body>
+</html>
