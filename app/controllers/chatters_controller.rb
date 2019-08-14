@@ -8,9 +8,9 @@ class ChattersController < ApplicationController
     @chatters = Chatter.all.order('id DESC')
     @chatter = Chatter.create(chatter_params)
     if @chatter.save
-      redirect_to root_path, notice: "ツイートを投稿しました！"
+      redirect_to :root, notice: "ツイートを投稿しました！"
     else
-      render 'index'
+      render :index
     end
   end
 
