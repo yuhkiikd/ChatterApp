@@ -14,5 +14,5 @@ class ChattersController < ApplicationController
   def chatter_params
     params.require(:chatter).permit(:content)
   end
-
+  
 end
