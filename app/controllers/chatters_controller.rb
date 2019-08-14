@@ -1,6 +1,6 @@
 class ChattersController < ApplicationController
   def index
-    @chatters = Chatter.all
+    @chatters = Chatter.all.order('id DESC')
     @chatter = Chatter.new
   end
 
