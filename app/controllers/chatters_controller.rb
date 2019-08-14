@@ -10,7 +10,7 @@ class ChattersController < ApplicationController
     if @chatter.save
       redirect_to root_path, notice: "ツイートを投稿しました！"
     else
-      render :new
+      render :index
     end
   end
 
