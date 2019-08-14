@@ -1,8 +1,15 @@
 <%= form_with(model: @chatter, local: true) do |form| %>
+    <% if @chatter.errors.any? %>
+        <ul class="error_messages">
+            <% @chatter.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+        </ul>
+    <% end %>
+
     <div class="chatter_content">
         <%= form.label :content %>
         <%= form.text_field :content %>
     </div>
     <%= form.submit %>
-    
 <% end %>
