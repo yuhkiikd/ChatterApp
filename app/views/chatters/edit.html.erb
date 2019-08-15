@@ -19,21 +19,6 @@
         </section>
     </article>
 
-<hr>
-
-    <article>
-        <section>
-            <% @chatters.each do |chatter| %>
-                <div>
-                    <%= chatter.content %>
-                </div>
-                <div class="edit_botton">
-                    <%= link_to '編集', edit_chatter_path(chatter.id) %>
-                </div>
-            <% end %>
-        </section>
-    </article>
-
     <footer>
     </footer>
 

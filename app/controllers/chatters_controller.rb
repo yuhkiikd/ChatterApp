@@ -14,6 +14,23 @@ class ChattersController < ApplicationController
     end
   end
 
+  def show
+    @chatter = Chatter.find(params[:id])
+  end
+
+  def edit
+    @chatter = Chatter.find(params[:id])
+  end
+
+  def update
+    @chatter = Chatter.find(params[:id])
+    if @chatter.update(chatter_params)
+      redirect_to chatters_path, notice: "ツイートを更新しました！"
+    else
+      render :edit
+    end
+  end
+
   private
 
   def chatter_params
