@@ -14,10 +14,6 @@ class ChattersController < ApplicationController
     end
   end
 
-  def show
-    @chatter = Chatter.find(params[:id])
-  end
-
   def edit
     @chatter = Chatter.find(params[:id])
   end
