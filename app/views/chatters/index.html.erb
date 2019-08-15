@@ -30,6 +30,9 @@
                 <div class="edit_botton">
                     <%= link_to '編集', edit_chatter_path(chatter.id) %>
                 </div>
+                <div class="edit_botton">
+                    <%= link_to '削除', chatter_path(chatter.id), method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
+                </div>
             <% end %>
         </section>
     </article>

@@ -1,5 +1,6 @@
 class ChattersController < ApplicationController
   before_action :chatter_order, only: [:index, :create]
+  before_action :set_chatter, only: [:edit, :update, :destroy]
 
   def index
     @chatter = Chatter.new
@@ -15,11 +16,9 @@ class ChattersController < ApplicationController
   end
 
   def edit
-    @chatter = Chatter.find(params[:id])
   end
 
   def update
-    @chatter = Chatter.find(params[:id])
     if @chatter.update(chatter_params)
       redirect_to chatters_path, notice: "ツイートを更新しました！"
     else
@@ -27,7 +26,16 @@ class ChattersController < ApplicationController
     end
   end
 
+  def destroy
+    @chatter.destroy
+    redirect_to root_path, notice: "ツイートを削除しました！"
+  end
+
   private
+
+  def set_chatter
+    @chatter = Chatter.find(params[:id])
+  end
 
   def chatter_params
     params.require(:chatter).permit(:content)
