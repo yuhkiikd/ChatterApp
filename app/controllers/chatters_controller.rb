@@ -20,7 +20,7 @@ class ChattersController < ApplicationController
 
   def update
     if @chatter.update(chatter_params)
-      redirect_to chatters_path, notice: "ツイートを更新しました！"
+      redirect_to root_path, notice: "ツイートを更新しました！"
     else
       render :edit
     end
